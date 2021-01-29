@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="#">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+</head>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ---- Base Rules ---- */
+
+  body {
+    background: linear-gradient(0deg, rgb(46, 44, 44) 0%, rgb(51, 51, 51) 100%);
+    margin: 0;
+    top: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Tajawal";
+
+  }
+
+  h1 {
+    color: #fff;
+  }
+
+  label {
+    color: #fff;
+  }
+
+  main {
+    margin: 10vh 1em 12vh;
+  }
+
+  .card {
+    background-color: dimgrey;
+  }
+
+  /*navbar*/
+
+  nav a:focus {
+    outline: none;
+    background: rgba(51, 51, 51, 0.467);
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    outline: none;
+    background: rgba(51, 51, 51, 0.467);
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background: rgba(63, 63, 63, 0.467);
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px 0px 20px 0px;
+    text-decoration: none;
+  }
+
+  nav {
+    background-color: rgb(27, 26, 26);
+    height: 0%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    box-sizing: border-box;
+    transition: 0.3s;
+    padding: 10px 10px 20px 10px;
+    margin: auto;
+    animation: rolling 1s linear forwards;
+  }
+
+  nav a {
+
+    color: rgb(219, 216, 216);
+    padding: 12px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 10px;
+    font-size: 60px;
+    animation: fadingNavContent 1.5s linear forwards;
+  }
+
+  /* Footer Styles */
+
+  .page__footer {
+    background: #000;
+    padding: 4em;
+    color: #fff;
+  }
+
+  .page__footer p {
+    color: #fff;
+  }
+</style>
+
+<body>
+  <nav class="navbar__menu">
+    <!-- Navigation starts as empty UL that will be populated with JS -->
+    <a href="/" id="logo">
+      MyBlog
+    </a>
+  </nav>
+  <main>
+    <div class="container">
+      <h1 class="mb-4">Login</h1>
+      <form action="/user" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input required value="<%= user.name %>" type="text" name="name" id="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input required value="<%= user.password %>" type="password" name="password" id="password"
+            class="form-control">
+        </div>
+        <script type="text/html" src="./check.js"></script>
+        <a href="/" class="btn btn-secondary">Back</a>
+        <button type="submit" class="btn btn-primary" id="submitLogin">Login</button>
+      </form>
+    </div>
+  </main>
+  <footer class="page__footer" id="page__footer">
+    <p>&copy OmarMostafa</p>
+  </footer>
+</body>
+
+</html> -->
