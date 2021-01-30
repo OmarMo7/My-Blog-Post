@@ -1,0 +1,182 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Base Rules ---- */
+
+body {
+  background: linear-gradient(0deg, rgb(46, 44, 44) 0%, rgb(51, 51, 51) 100%);
+  margin: 0;
+  top: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Tajawal";
+}
+
+h1 {
+  color: #fff;
+}
+
+label {
+  color: #fff;
+}
+
+main {
+  margin: 10vh 1em 35vh;
+}
+
+.sanitizedHtml p {
+  color: #fff;
+}
+
+.card {
+  background-color: rgb(197, 196, 196);
+}
+
+/*navbar*/
+
+nav a:focus {
+  outline: none;
+  background: rgba(51, 51, 51, 0.467);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+a:hover {
+  outline: none;
+  background: rgba(51, 51, 51, 0.467);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.text-muted {
+  font-size: 1.2em;
+  color: aliceblue;
+  margin-bottom: 30px;
+}
+
+.sanitizedHtml {
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background: rgba(63, 63, 63, 0.467);
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px 0px 20px 0px;
+  text-decoration: none;
+}
+
+nav {
+  background-color: rgb(27, 26, 26);
+  height: 0%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: relative;
+  box-sizing: border-box;
+  transition: 0.3s;
+  padding: 10px 10px 20px 10px;
+  margin: auto;
+  animation: rolling 1s linear forwards;
+}
+
+nav a {
+  color: rgb(219, 216, 216);
+  padding: 12px 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin: 10px;
+  font-size: 60px;
+  animation: fadingNavContent 1.5s linear forwards;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  margin-bottom: -10px;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  margin-bottom: -10px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Footer Styles */
+
+.page__footer {
+  background: #000;
+  padding: 4em;
+  color: #fff;
+}
+
+.page__footer p {
+  color: #fff;
+}
+
+#logo {
+  font-family: "Hachi Maru Pop", cursive;
+  font-size: 50px;
+}
+
+.row {
+  display: none;
+}
+
+.description {
+  color: bisque;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.row{
+  margin-top: 80px;
+
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: right;
+  width: 80%;
+  padding: 15px;
+}
+
+.column img {
+  margin-bottom: 140px;
+  margin-left: 10px;
+  width: 90%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
