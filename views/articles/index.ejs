@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="shortcut icon" href="#">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@700&family=Tajawal:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Harmattan:wght@700&display=swap"
+    rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -23,6 +29,23 @@
 
     h1 {
       color: #fff;
+    }
+
+    #logo {
+      font-family: 'Hachi Maru Pop', cursive;
+      font-size: 50px;
+    }
+
+    #loginButton {
+      display: none;
+      position: absolute;
+      text-align: center;
+      border-radius: 5%;
+      padding: 1%;
+      background-color: rgb(32, 32, 32);
+      border-color: rgb(124, 123, 123);
+      left: 85%;
+      bottom: 20%;
     }
 
     main {
@@ -66,7 +89,6 @@
       transition: 0.3s;
       padding: 10px 10px 20px 10px;
       margin: auto;
-      animation: rolling 1s linear forwards;
     }
 
     nav a {
@@ -76,7 +98,7 @@
       transition: 0.3s;
       margin: 10px;
       font-size: 60px;
-      animation: fadingNavContent 1.5s linear forwards;
+      animation: rolling 1s linear forwards fadingNavContent 1.5s linear forwards;
 
     }
 
@@ -91,6 +113,19 @@
     .page__footer p {
       color: #fff;
     }
+
+    .welcome {
+      text-align: center;
+      color: rgb(219, 204, 191);
+    }
+
+    .Tajawal {
+      font-family: Tajawal;
+    }
+
+    .card-body {
+      padding: 2.25rem;
+    }
   </style>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
@@ -102,38 +137,55 @@
     <a href="/" id="logo">
       MyBlog
     </a>
+    <a class="btn btn-primary" id="loginButton" href="../user/login">Login, Omar</a>
   </nav>
   <main>
-    <div class="container">
-      <h1 class="mb-4">Blog Articles</h1>
-      <a href="/articles/new" class="btn btn-success">New Article</a>
+    <% if (user.name!="omar" || user.password !="oooooo7" ){ %>
+      <style>
+        #Edit,
+        #new,
+        #submit {
+          display: none;
+        }
 
-      <% articles.forEach(article=> { %>
-        <div class="card mt-4">
-          <div class="card-body">
-            <h4 class="card-title">
-              <%= article.title %>
-            </h4>
-            <div class="card-subtitle text-muted mb-2">
-              <%= article.createdAt.toLocaleDateString() %>
+        #loginButton {
+          display: inline
+        }
+      </style>
+      <h2 class="welcome">Hello, Reader</h2>
+      <h2 class="welcome" style="font-family: 'Tajawal', sans-serif;">اعمل كوباية شاى وخدلك لفّة</h2>
+      <% } %>
+        <div class="container">
+          <h1 class="mb-4">Blog Articles</h1>
+          <a href="/articles/new" id="new" class="btn btn-success">New Article</a>
+
+          <% articles.forEach(article=> { %>
+            <div class="card mt-4">
+              <div class="card-body">
+                <h4 class="card-title Tajawal">
+                  <%= article.title %>
+                </h4>
+                <div class="card-subtitle text-muted mb-2 Tajawal">
+                  <%= article.createdAt.toLocaleDateString() %>
+                </div>
+                <div class="card-text mb-2 Tajawal">
+                  <%= article.description %>
+                </div>
+                <a href="articles/<%= article.slug %>" class="btn btn-primary" id="Read">Read More</a>
+                <a href="articles/edit/<%= article.id %>" class="btn btn-info" id="Edit">Edit</a>
+                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                  <button type="submit" id="submit" class="btn btn-danger">Delete</button>
+                </form>
+              </div>
             </div>
-            <div class="card-text mb-2">
-              <%= article.description %>
-            </div>
-            <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
-            <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-              <button type="submit" id="submit" class="btn btn-danger">Delete</button>
-            </form>
-          </div>
+            <% }) %>
         </div>
-        <% }) %>
-    </div>
+        
   </main>
-
   <footer class="page__footer" id="page__footer">
     <p>&copy OmarMostafa</p>
   </footer>
 </body>
-<script type="text/html" src="../users/check.js"></script>
+
+
 </html>
