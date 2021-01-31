@@ -56,6 +56,7 @@ function makeURLFriendly (string) {
   // Regular expression that matches strings that have
   // right to left direction.
   const isRightToLeft = /[\u0590-\u05ff\u0600-\u06ff]/u
+  
   // Makes an array of all the words in urlFriendlyString
   let words = urlFriendlyString.split("-")
 
@@ -74,19 +75,11 @@ function makeURLFriendly (string) {
       .length === words.length
   )
 
-  if (isRightToLeft.test(words[0])){
-    type = "rtl";
-  }
-  else{
-    type = "ltr"; 
-  }
-
-  str = urlFriendlyString + ' ' + type
   // If the string is unidirectional, there is no need for
   // it to pass through our bidirectional algorithm.
   if (stringIsUnidirectional) {
     
-    return str
+    return urlFriendlyString
       // Replaces multiple hyphens by one hyphen
       .replace(/-+/g, "-")
       // Remove hyphen from start.
@@ -109,13 +102,13 @@ function makeURLFriendly (string) {
     urlFriendlyString += "-"
     // If the word isn't right to left concatinate the "Right
     // to Left Embedding" character before the word.
-    if (!isRightToLeft.test(word)) { urlFriendlyString += `\u202B${word}`; type = "ltr";} 
+    if (!isRightToLeft.test(word)) { urlFriendlyString += `\u202B${word}`; type = "rtl";} 
     // If not then just concatinate the word.
-    else urlFriendlyString += word; type = "rtl"
+    else urlFriendlyString += word; type = "ltr"
   }
   console.log('started')
   
-  return str
+  return urlFriendlyString
     // Replaces multiple hyphens by one hyphen.
     .replace(/-+/g, "-")
     // Remove hyphen from start.
@@ -126,10 +119,7 @@ function makeURLFriendly (string) {
     // or the end of a string, the first two regular expressions won't
     // match them and the string will look like it still has hyphens
     // in the start or the end.
-    .replace(/^\u202B-+/, "")
-    .replace(/-+\u202B$/, "")
-    // Removes multiple hyphens that come after U + 202B
-    .replace(/\u202B-+/, "")
+    
 
 }
 
