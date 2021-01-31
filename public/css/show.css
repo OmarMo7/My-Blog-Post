@@ -56,6 +56,8 @@ a:hover {
 .sanitizedHtml {
   font-size: 1.8em;
   font-weight: 500;
+  margin-top: 2em;
+  margin-bottom: 30px;
 }
 
 nav a:hover {
@@ -156,9 +158,8 @@ nav a {
   margin-bottom: 30px;
 }
 
-.row{
+.row {
   margin-top: 80px;
-
 }
 
 /* Create two equal columns that floats next to each other */
