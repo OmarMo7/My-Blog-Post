@@ -181,3 +181,39 @@ nav a {
   display: table;
   clear: both;
 }
+
+@keyframes flip {
+      50% {
+        transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.8);
+        animation-timing-function: ease-in;
+      }
+
+      80% {
+        transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);
+        animation-timing-function: ease-in;
+      }
+
+      100% {
+        transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    .animated.flip {
+      backface-visibility: visible;
+      animation-name: flip;
+      font-size: 40px;
+      font-weight: bolder;
+      width: 150px;
+      text-align: center;
+      margin-left: 20%;
+    }
+
+    .navbar-brand {
+      color: #2c2c2c;
+      letter-spacing: .2em;
+      text-shadow:
+        2px 2px 0px #d5d5d5,
+        3px 3px 0px rgba(68, 67, 67, 0.6);
+    }
+    

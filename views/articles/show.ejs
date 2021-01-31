@@ -21,6 +21,7 @@
     <a href="/" id="logo">
       MyBlog
     </a>
+    <a href="/" id="omar" class="navbar-brand animated flip"></a>
   </nav>
   <main>
     <% if (article.textType=="rtl" ) { %>
@@ -64,14 +65,14 @@
                   </div>
                   <div class="row">
                     <div class="column">
-                      <div class="description">الحل بسيط جدا .. لو انت شغال على فاير فوكس خش على صفحة ال extenstion اول
+                      <div class="description">1- الحل بسيط جدا .. لو انت شغال على فاير فوكس خش على صفحة ال extenstion اول
                         حاجة</div>
                       <img id="1" src="../../public/img/extension.jpg" alt="Open the extension panel in Firefox">
-                      <div class="description">بعدين اكتب BrowsecVPN على بانل السيرش</div>
+                      <div class="description">2- بعدين اكتب BrowsecVPN على بانل السيرش</div>
                       <img id="2" src="../../public/img/search.jpg" alt="Search for BrowsecVPN">
-                      <div class="description">اطلع فوق يمين وضيف ال add-on</div>
+                      <div class="description">3- اطلع فوق يمين وضيف ال add-on</div>
                       <img id="3" src="../../public/img/added.jpg" alt="Add the extension from store">
-                      <div class="description">مبروك! .. كده تقدر تتصفح أى معلومات تحب تعرفها دلوقتى ف Medium</div>
+                      <div class="description">4- مبروك! .. كده تقدر تتصفح أى معلومات تحب تعرفها دلوقتى ف Medium</div>
                       <img id="4" style="margin-bottom: 20px;" src="../../public/img/booom.jpg" alt="HORRAY!">
                     </div>
                   </div>
@@ -85,11 +86,23 @@
 
 </body>
 
-<script>
+<script language="JavaScript" type="text/javascript">
   const div = document.querySelector('.container h1')
     if (div.innerText == "حل مشكلة ميديام") {
       const row = document.querySelector('.row')
       row.setAttribute('style','display: block;')
     }
+    //Animation Script
+    var myArray = ["Omar's", 'Blog', 'Post'];
+      let n = 0;
+      const textToFlip = document.getElementById("omar")
+      setInterval(function () {
+        textToFlip.textContent = myArray[n]
+        if (myArray.length - 1 == n) {
+          n = 0;
+        } else {
+          n++;
+        }
+      }, 1500);
 </script>
 </html>

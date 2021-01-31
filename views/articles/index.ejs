@@ -91,7 +91,7 @@
       margin: auto;
     }
 
-    nav a {
+    nav #logo {
       color: rgb(219, 216, 216);
       padding: 12px 10px;
       text-decoration: none;
@@ -126,6 +126,47 @@
     .card-body {
       padding: 2.25rem;
     }
+
+    .animated {
+      animation-duration: 3s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes flip {
+      50% {
+        transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.8);
+        animation-timing-function: ease-in;
+      }
+
+      80% {
+        transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);
+        animation-timing-function: ease-in;
+      }
+
+      100% {
+        transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    .animated.flip {
+      backface-visibility: visible;
+      animation-name: flip;
+      font-size: 40px;
+      font-weight: bolder;
+      width: 150px;
+      text-align: center;
+      margin-left: 20%;
+    }
+
+    .navbar-brand {
+      color: #2c2c2c;
+      letter-spacing: .2em;
+      text-shadow:
+        2px 2px 0px #d5d5d5,
+        3px 3px 0px rgba(68, 67, 67, 0.6);
+    }
   </style>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
@@ -137,6 +178,7 @@
     <a href="/" id="logo">
       MyBlog
     </a>
+    <a href="/" id="omar" class="navbar-brand animated flip"></a>
     <a class="btn btn-primary" id="loginButton" href="../user/login">Login, Omar</a>
   </nav>
   <main>
@@ -180,11 +222,24 @@
             </div>
             <% }) %>
         </div>
-        
+
   </main>
   <footer class="page__footer" id="page__footer">
     <p>&copy OmarMostafa</p>
   </footer>
+  <script language="JavaScript" type="text/javascript" >
+    var myArray = ["Omar's", 'Blog', 'Post'];
+    let n = 0;
+    const textToFlip = document.getElementById("omar")
+    setInterval(function () {
+      textToFlip.textContent = myArray[n]
+      if (myArray.length - 1 == n) {
+        n = 0;
+      } else {
+        n++;
+      }
+    }, 3000);
+  </script>
 </body>
 
 
