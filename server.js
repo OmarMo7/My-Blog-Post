@@ -18,7 +18,7 @@ mongoose.connection.once('open', function () {
 }).on('error', function (error) {
   console.log('Connection error!.. ', error);
 })
-app.use("/public", express.static(__dirname+ '/public'));
+app.use("/public", express.static(__dirname + '/public'));
 
 app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'ejs')
@@ -40,4 +40,4 @@ app.use('/articles', articleRouter)
 
 
 app.use('/user', userRouter)
-app.listen(5000)
+app.listen(5000, () => console.log('Listening on http://localhost:5000'))
