@@ -12,9 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Harmattan:wght@700&display=swap"
     rel="stylesheet">
-  <style>
-
-  </style>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
 </head>
@@ -23,7 +20,9 @@
   <nav class="navbar__menu">
     <!-- Navigation starts as empty UL that will be populated with JS -->
     <a href="/" id="logo">
-      MyBlog
+      <div class="sign">
+        <span class="fast-flicker">Iam</span>Om<span class="flicker">ar Blo</span>g Post
+      </div>
     </a>
     <a href="/" id="omar" class="brand animated flip"></a>
     <a class="btn" id="loginButton" href="../user/login">Login, Omar</a>
@@ -75,19 +74,7 @@
 
 </body>
 
-<script language="JavaScript" type="text/javascript">
-  var myArray = ["My", 'Blog', 'Post'];
-  let n = 0;
-  const textToFlip = document.getElementById("omar")
-  setInterval(function () {
-    textToFlip.textContent = myArray[n]
-    if (myArray.length - 1 == n) {
-      n = 0;
-    } else {
-      n++;
-    }
-  }, 3000);
-</script>
+
 <footer class="page__footer" id="page__footer">
   <p>&copy OmarMostafa</p>
 </footer>
