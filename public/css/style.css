@@ -5,15 +5,15 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
-  text-decoration: none;
-}
-
 body {
   background: linear-gradient(0deg, rgb(46, 44, 44) 0%, rgb(51, 51, 51) 100%);
   margin: 0;
   top: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Tajawal";
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
@@ -27,16 +27,15 @@ h1 {
 
 #loginButton {
   display: none;
-  position: absolute;
+  position: relative;
   text-align: center;
   border-radius: 5%;
   padding: 10px;
   background-color: rgb(32, 32, 32);
   border-color: rgb(124, 123, 123);
-  top: 31px;
-  right: 37px;
   border: 1px solid #fff transparent;
   color: #fff;
+  left: 85%;
 }
 
 main {
@@ -88,6 +87,17 @@ nav #logo {
 .welcome {
   text-align: center;
   color: rgb(219, 204, 191);
+  text-shadow: 1px 2px 4px brown;
+}
+
+#coffee {
+  text-shadow: none;
+}
+
+.mb-4 {
+  color: rgb(209, 209, 209);
+  text-shadow: 1px 2px 8px black;
+  text-align: center;
 }
 
 .Tajawal {
@@ -103,8 +113,14 @@ nav #logo {
   border-radius: 2%;
 }
 
-.card-title {
+.card-title > a {
   font-size: 30px;
+  text-decoration: none;
+  color: #000;
+}
+
+.card-title {
+  border-bottom: 1px solid #a0a4a7;
 }
 
 .card-body {
@@ -194,14 +210,16 @@ label {
   }
 
   #loginButton {
-    top: 20px;
+    top: 0px;
     padding: 5px;
-    right: 15px;
+    font-size: 12px;
   }
 
   @media screen and (max-width: 375px) {
-    .animated.flip {
-      display: none;
+    #loginButton {
+      top: 0px;
+      padding: 5px;
+      font-size: 10px;
     }
   }
 }
