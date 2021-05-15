@@ -41,7 +41,8 @@
         }
       </style>
       <h2 class="welcome">Hello, Reader</h2>
-      <h2 class="welcome" style="font-family: 'Tajawal', sans-serif;">اعمل كوباية شاى وخدلك لفّة</h2>
+      <h2 class="welcome" style="font-family: 'Tajawal', sans-serif;"> <span id="coffee">☕</span> اعمل كوباية شاى وخدلك
+        لفّة</h2>
       <% } %>
         <div class="container">
           <h1 class="mb-4">Blog Articles</h1>
@@ -51,7 +52,9 @@
             <div class="card mt-4">
               <div class="card-body" dir="auto">
                 <h3 class="card-title Tajawal">
-                  <%= article.title %>
+                  <a href="articles/<%= article.slug %>">
+                    <%= article.title %>
+                  </a>
                 </h3>
                 <div class="card-subtitle text-muted mb-2 Tajawal">
                   <%= article.createdAt.toLocaleDateString() %>
