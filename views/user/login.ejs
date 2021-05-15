@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/css/style.css">
+  <link rel="stylesheet" href="../../public/css/login.css">
   <link rel="shortcut icon" href="#">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Harmattan:wght@700&display=swap"
@@ -30,15 +31,15 @@
       <form action="/user" method="POST">
         <div class="form-group">
           <label for="name">Name</label>
-          <input required value="<%= user.name %>" type="text" name="name" id="name" class="form-control">
+          <input required="true" value="<%= user.name %>" type="text" name="name" id="name" class="form-control">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input required value="<%= user.password %>" type="password" name="password" id="password"
+          <input required="true" value="<%= user.password %>" type="password" name="password" id="password"
             class="form-control">
         </div>
         <script type="text/html" src="./check.js"></script>
-        <button href="/" class="btn btn-secondary">Back</button>
+        <button href="/articles" id="back" class="btn btn-secondary">Back</button>
         <button type="submit" class="btn btn-primary" id="submitLogin">Login</button>
       </form>
     </div>
@@ -47,5 +48,6 @@
     <p>&copy OmarMostafa</p>
   </footer>
 </body>
+<script src="../../public/js/login.js"></script>
 
 </html>
