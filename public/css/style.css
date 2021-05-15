@@ -169,15 +169,12 @@ label {
   margin-top: 45px;
 }
 
-
-
 .brand {
   color: #2c2c2c;
   text-shadow: 2px 2px 0px #d5d5d5, 3px 3px 0px rgba(68, 67, 67, 0.6);
 }
 
 @media screen and (max-width: 768px) {
-
   nav #logo {
     font-size: 30px;
   }
@@ -196,8 +193,6 @@ label {
     }
   }
 }
-
-
 
 .form-control {
   display: block;
@@ -219,7 +214,6 @@ label {
   color: #fff;
   position: absolute;
   width: 100%;
-  bottom: 0px;
 }
 
 .sign {
