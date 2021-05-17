@@ -162,6 +162,13 @@ label {
   opacity: 0.9;
 }
 
+.btn-success {
+  color: #fff;
+  background-color: #149e08;
+  border-color: #0f7506;
+  margin: 5% 0% 3% 10%;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #0069d9;
@@ -180,13 +187,7 @@ label {
   color: #fff;
   background-color: #aa0a0a;
   border-color: #a80606;
-  margin-top: 45px;
-}
-
-.inline {
-  display: flex;
-  justify-content: space-between;
-  width: 34%;
+  margin-top: 10px;
 }
 
 .d-inline {
