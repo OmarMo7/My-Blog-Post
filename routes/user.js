@@ -9,6 +9,10 @@ router.get('/login', (req, res) => {
   res.render('user/login', { user: new User() })
 })
 
+// router.get("/", async (req, res) => {
+
+// });
+
 
 router.post('/', async (req, res, next) => {
   req.user = new User()
@@ -24,7 +28,7 @@ function saveUserAndRedirect() {
     let article = await Article.find().sort({ createdAt: 'desc' })
     try {
       // user = await user.save()
-      res.render('articles/index', { articles: article, user: user})
+      res.render('articles/index', { articles: article, user: user })
     } catch (e) {
       res.render('articles/index')
     }
