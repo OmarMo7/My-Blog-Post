@@ -169,11 +169,28 @@ label {
   margin-top: 45px;
 }
 
-.btn-secondary {
+.btn-info {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
   margin-top: 45px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #aa0a0a;
+  border-color: #a80606;
+  margin-top: 45px;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+  width: 34%;
+}
+
+.d-inline {
+  margin: 0;
 }
 
 .brand {
@@ -220,7 +237,6 @@ form {
     0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   animation: shine 2s forwards, flicker 3s infinite;
 }
-
 
 @media screen and (max-width: 768px) {
   #logo {

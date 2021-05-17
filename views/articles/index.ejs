@@ -63,11 +63,13 @@
                 <div class="card-text mb-2 Tajawal">
                   <%= article.description %>
                 </div>
-                <a href="articles/<%= article.slug %>" class="btn btn-primary" id="Read">Read More</a>
-                <a href="articles/edit/<%= article.id %>" class="btn btn-info" id="Edit">Edit</a>
-                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                  <button type="submit" id="submit" class="btn btn-danger">Delete</button>
-                </form>
+                <div class="inline">
+                  <a href="articles/<%= article.slug %>" class="btn btn-primary" id="Read">Read More</a>
+                  <a href="articles/edit/<%= article.id %>" class="btn btn-info" id="Edit">Edit</a>
+                  <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                    <button type="submit" id="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                </div>
               </div>
             </div>
             <% }) %>
