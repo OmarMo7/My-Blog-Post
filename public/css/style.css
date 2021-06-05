@@ -29,7 +29,18 @@ h1 {
 }
 
 #loginButton {
-  display: none;
+  position: relative;
+  text-align: center;
+  border-radius: 5%;
+  padding: 10px;
+  background-color: rgb(32, 32, 32);
+  border-color: rgb(124, 123, 123);
+  border: 1px solid #fff transparent;
+  color: #fff;
+  left: 85%;
+}
+
+#logoutButton {
   position: relative;
   text-align: center;
   border-radius: 5%;
@@ -166,7 +177,7 @@ label {
   color: #fff;
   background-color: #149e08;
   border-color: #0f7506;
-  margin: 5% 0% 3% 10%;
+  margin: 1% 0% 3% 10%;
 }
 
 .btn-primary {
@@ -250,9 +261,23 @@ form {
     font-size: 12px;
     left: 80%;
   }
+
+  #logoutButton {
+    top: 0px;
+    padding: 5px;
+    font-size: 12px;
+    left: 80%;
+  }
 }
 @media screen and (max-width: 375px) {
   #loginButton {
+    top: 0px;
+    padding: 5px;
+    font-size: 9px;
+    left: 79%;
+  }
+
+  #logoutButton {
     top: 0px;
     padding: 5px;
     font-size: 9px;
