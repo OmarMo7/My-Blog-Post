@@ -26,54 +26,42 @@
     </a>
     <a href="/" id="omar" class="brand animated flip"></a>
     <a class="btn" id="loginButton" href="../user/login">Login, Omar</a>
+    <a class="btn" id="logoutButton" href="/">Logout, Omar</a>
   </nav>
   <main>
-    <% if (user.name!="omar" || user.password !="oooooo7" ){ %>
-      <style>
-        #Edit,
-        #new,
-        #submit {
-          display: none;
-        }
+    <h2 class="welcome">Hello, Reader</h2>
+    <h2 class="welcome" style="font-family: 'Tajawal', sans-serif;"> <span id="coffee">☕</span> اعمل كوباية شاى
+      وخدلك
+      لفّة</h2>
+    <div class="container">
+      <h1 class="mb-4">Blog Articles</h1>
+      <a href="/articles/new" id="new" class="btn btn-success">New Article</a>
 
-        #loginButton {
-          display: inline
-        }
-      </style>
-      <% } %>
-        <h2 class="welcome">Hello, Reader</h2>
-        <h2 class="welcome" style="font-family: 'Tajawal', sans-serif;"> <span id="coffee">☕</span> اعمل كوباية شاى
-          وخدلك
-          لفّة</h2>
-        <div class="container">
-          <h1 class="mb-4">Blog Articles</h1>
-          <a href="/articles/new" id="new" class="btn btn-success">New Article</a>
-
-          <% articles.forEach(article=> { %>
-            <div class="card mt-4">
-              <div class="card-body" dir="auto">
-                <h3 class="card-title Tajawal">
-                  <a href="articles/<%= article.slug %>">
-                    <%= article.title %>
-                  </a>
-                </h3>
-                <div class="card-subtitle text-muted mb-2 Tajawal">
-                  <%= article.createdAt.toLocaleDateString() %>
-                </div>
-                <div class="card-text mb-2 Tajawal">
-                  <%= article.description %>
-                </div>
-                <div class="inline">
-                  <a href="articles/<%= article.slug %>" class="btn btn-primary" id="Read">Read More</a>
-                  <a href="articles/edit/<%= article.id %>" class="btn btn-info" id="Edit">Edit</a>
-                  <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                    <button type="submit" id="submit" class="btn btn-danger">Delete</button>
-                  </form>
-                </div>
-              </div>
+      <% articles.forEach(article=> { %>
+        <div class="card mt-4">
+          <div class="card-body" dir="auto">
+            <h3 class="card-title Tajawal">
+              <a href="articles/<%= article.slug %>">
+                <%= article.title %>
+              </a>
+            </h3>
+            <div class="card-subtitle text-muted mb-2 Tajawal">
+              <%= article.createdAt.toLocaleDateString() %>
             </div>
-            <% }) %>
+            <div class="card-text mb-2 Tajawal">
+              <%= article.description %>
+            </div>
+            <div class="inline">
+              <a href="articles/<%= article.slug %>" class="btn btn-primary" id="Read">Read More</a>
+              <a href="articles/edit/<%= article.id %>" class="btn btn-info" id="Edit">Edit</a>
+              <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                <button type="submit" id="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
         </div>
+        <% }) %>
+    </div>
 
   </main>
 
@@ -83,6 +71,6 @@
   </footer>
 </body>
 
-
+<script src="../../public/js/index.js"></script>
 
 </html>
