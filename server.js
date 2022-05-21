@@ -4,6 +4,7 @@ const Article = require("./models/article");
 const User = require("./models/user");
 const articleRouter = require("./routes/articles");
 const userRouter = require("./routes/user");
+const aboutRouter = require("./routes/about");
 const methodOverride = require("method-override");
 const app = express();
 let userLogin = require("./routes/user");
@@ -40,6 +41,7 @@ app.get("/", async (req, res) => {
 
 app.use("/articles", articleRouter);
 app.use("/user", userRouter);
+app.use("/", aboutRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
