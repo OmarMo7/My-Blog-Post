@@ -52,6 +52,17 @@ h1 {
   left: 85%;
 }
 
+#about{
+  position: relative;
+  text-align: center;
+  border-radius: 5%;
+  padding: 10px;
+  background-color: rgb(32, 32, 32);
+  border-color: rgb(124, 123, 123);
+  border: 1px solid #fff transparent;
+  color: #fff;
+}
+
 main {
   margin: 10vh 0.2em 10vh;
 }
@@ -105,6 +116,11 @@ nav {
 .welcome {
   text-align: center;
   color: rgb(219, 204, 191);
+  text-shadow: 1px 2px 4px brown;
+}
+
+.projects {
+  color: rgb(255, 255, 255);
   text-shadow: 1px 2px 4px brown;
 }
 
